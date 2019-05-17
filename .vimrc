@@ -1,66 +1,97 @@
-" Sets how many lines of history VIM has to remember
-set history=500
+"        _
+" __   _(_)_ __ ___  _ __ ___
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__
+"   \_/ |_|_| |_| |_|_|  \___|
 
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
+let mapleader =","
 
-" Set to auto read when a file is changed from the outside
-set autoread
+call plug#begin('~/.vim/plugged')
+" Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-commentary'
+Plug 'mileszs/ack.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-latex/vim-latex'
+" Plug 'cmugpi/vim-c0'
+Plug 'iamcco/markdown-preview.vim'
+" Plug 'vim-scripts/peaksea'
+Plug 'jez/vim-better-sml'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'danilo-augusto/vim-afterglow'
+Plug 'scrooloose/nerdtree'
+call plug#end()
 
-"Always show current position
-set ruler
+" Some basics:
+	set nocompatible
+	filetype plugin on
+	syntax on
+	set encoding=utf-8
 
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+" Hybrid number line
+	set number
+	set relativenumber
+  set nu rnu
 
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
+	set splitbelow
+	set splitright
 
-" Makes search act like search in modern browsers
-set incsearch
+" Enable syntax
+  syntax enable
 
-" For regular expressions turn magic on
-set magic
 
-" Show matching brackets when text indicator is over them
-set showmatch
+" Set tabspaces to 2 and shiftwidth 2
+  :set tabstop=2
+  :set shiftwidth=2
+  :set expandtab
 
-" How many tenths of a second to blink when matching brackets
-set mat=2
 
-" Enable syntax highlighting
-syntax enable
+" Shortcutting split navigation, saving a keypress:
+	map <C-Left> <C-w>h
+	map <C-Down> <C-w>j
+	map <C-Up> <C-w>k
+	map <C-Right> <C-w>l
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
+" Get line, word and character counts with F3:
+	map <F3> :!wc %<CR>
 
-try
-    colorscheme desert
-catch
-endtry
+" Spell-check set to F6:
+	map <F6> :setlocal spell! spelllang=en_us<CR>
 
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+" Readmes autowrap text:
+	autocmd BufRead,BufNewFile *.md set tw=79
 
-" Use spaces instead of tabs
-set expandtab
+" Interpret .md files, etc. as .markdown
+	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
-" 1 tab == 2 spaces
-set shiftwidth=2
-set tabstop=2
 
-" Enable autoindent
-set autoindent
 
-" Show line number
-set number
+" Enable autocompletion:
+	set wildmode=longest,list,full
+	set wildmenu
 
-" Enable cursor usage
-set mouse=a
+
+  " Automatically deletes all tralling whitespace on save.
+	autocmd BufWritePre * %s/\s\+$//e
+
+" When shortcut files are updated, renew bash and ranger configs with new material:
+	autocmd BufWritePost ~/.key_directories,~/.key_files !bash ~/.scripts/tools/shortcuts
+
+" Runs a script that cleans out tex build files whenever I close out of a .tex file.
+	autocmd VimLeave *.tex !texclear %
+
+" Opens Ctrl-P using Ctrl-f
+  map <C-f> :CtrlP<cr>
+
+" Enables mouse usage
+  :set mouse=a
+
+" Afterglow colourscheme settings
+  let g:afterglow_italic_comments=1
+  colorscheme afterglow
+
 
 

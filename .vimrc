@@ -22,6 +22,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'scrooloose/nerdtree'
+Plug 'soramugi/auto-ctags.vim'
+
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'vim-ruby/vim-ruby'
+
 call plug#end()
 
 " Some basics:
@@ -48,6 +54,8 @@ call plug#end()
   :set shiftwidth=2
   :set expandtab
 
+" Enable highlighting search patterns
+  :set hlsearch
 
 " Shortcutting split navigation, saving a keypress:
 	map <C-Left> <C-w>h

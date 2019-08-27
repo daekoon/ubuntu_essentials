@@ -23,10 +23,12 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'scrooloose/nerdtree'
 Plug 'soramugi/auto-ctags.vim'
+Plug 'embear/vim-localvimrc'
 
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'vim-ruby/vim-ruby'
+Plug 'gabesoft/vim-ags'
 
 call plug#end()
 
@@ -62,6 +64,10 @@ call plug#end()
 	map <C-Down> <C-w>j
 	map <C-Up> <C-w>k
 	map <C-Right> <C-w>l
+
+" Shortcutting tab navigation
+  map <S-Left> gT
+  map <S-Right> gt
 
 " Get line, word and character counts with F3:
 	map <F3> :!wc %<CR>

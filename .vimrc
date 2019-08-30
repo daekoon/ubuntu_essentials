@@ -56,6 +56,10 @@ call plug#end()
   :set shiftwidth=2
   :set expandtab
 
+" Indentation for specific file types
+  autocmd FileType java setlocal shiftwidth=4 tabstop=4 expandtab
+  autocmd FileType cpp setlocal shiftwidth=4 tabstop=4 expandtab
+
 " Enable highlighting search patterns
   :set hlsearch
 

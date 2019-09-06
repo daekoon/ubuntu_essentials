@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-latex/vim-latex'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " Plug 'cmugpi/vim-c0'
 Plug 'iamcco/markdown-preview.vim'
 " Plug 'vim-scripts/peaksea'
@@ -59,6 +60,7 @@ call plug#end()
 " Indentation for specific file types
   autocmd FileType java setlocal shiftwidth=4 tabstop=4 expandtab
   autocmd FileType cpp setlocal shiftwidth=4 tabstop=4 expandtab
+  autocmd FileType c setlocal shiftwidth=4 tabstop=4 expandtab
 
 " Enable highlighting search patterns
   :set hlsearch

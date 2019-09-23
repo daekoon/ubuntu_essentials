@@ -20,7 +20,7 @@ Plug 'iamcco/markdown-preview.vim'
 " Plug 'vim-scripts/peaksea'
 Plug 'jez/vim-better-sml'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-scripts/YankRing.vim'
+" Plug 'vim-scripts/YankRing.vim'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'scrooloose/nerdtree'
 Plug 'soramugi/auto-ctags.vim'
@@ -87,7 +87,8 @@ call plug#end()
 " Interpret .md files, etc. as .markdown
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
-
+" Toggles NerdTree
+  map <C-n> :NERDTreeToggle<CR>
 
 " Enable autocompletion:
 	set wildmode=longest,list,full

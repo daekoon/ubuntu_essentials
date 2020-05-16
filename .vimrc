@@ -61,6 +61,7 @@ call plug#end()
   autocmd FileType java setlocal shiftwidth=4 tabstop=4 expandtab
   autocmd FileType cpp setlocal shiftwidth=4 tabstop=4 expandtab
   autocmd FileType c setlocal shiftwidth=4 tabstop=4 expandtab
+  autocmd FileType go setlocal shiftwidth=4 tabstop=4 expandtab
 
 " Enable highlighting search patterns
   :set hlsearch

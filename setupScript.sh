@@ -1,4 +1,10 @@
-# Update 
+# Manual stuff to do
+# 1. Modify display settings to put secondary monitor as the primary monitor & to the right side
+# 2. Change GRUB timeout to 30s and style to `menu`
+# 3. Enable Korean language input
+
+
+# Update
 sudo apt update && sudo apt upgrade
 
 # Move the dock to bottom of the screen
@@ -19,3 +25,6 @@ sudo apt-get install git
 # Install vim plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Change default sudoedit editor to vim
+sudo update-alternatives --config editor

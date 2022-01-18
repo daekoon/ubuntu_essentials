@@ -18,9 +18,9 @@ wget -O- https://telegram.org/dl/desktop/linux | sudo tar xJ -C /opt/
 sudo ln -s /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
 
 # Install important stuff not installed with minimal installation
-sudo apt-get install vim
-sudo apt-get install curl
-sudo apt-get install git
+sudo apt-get install vim -y
+sudo apt-get install curl -y
+sudo apt-get install git -y
 
 # Install vim plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
